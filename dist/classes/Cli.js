@@ -3,6 +3,7 @@ import inquirer from "inquirer";
 import Truck from "./Truck.js";
 import Car from "./Car.js";
 import Motorbike from "./Motorbike.js";
+import Wheel from "./Wheel.js";
 // define the Cli class
 class Cli {
     // TODO: Update the constructor to accept Truck and Motorbike objects as well
@@ -222,7 +223,7 @@ class Cli {
         ])
             .then((answers) => {
             // TODO: Use the answers object to pass the required properties to the Motorbike constructor
-            const motorbike = new Motorbike(Cli.generateVin(), answers.color, answers.make, answers.model, parseInt(answers.year), parseInt(answers.weight), parseInt(answers.topSpeed), []);
+            const motorbike = new Motorbike(Cli.generateVin(), answers.color, answers.make, answers.model, parseInt(answers.year), parseInt(answers.weight), parseInt(answers.topSpeed), [new Wheel(answers.frontWheelDiameter, answers.frontWheelBrand), new Wheel(answers.rearWheelDiameter, answers.rearWheelBrand)]);
             // TODO: push the motorbike to the vehicles array
             this.vehicles.push(motorbike);
             // TODO: set the selectedVehicleVin to the vin of the motorbike
@@ -363,9 +364,6 @@ class Cli {
                         this.findVehicleToTow(trucks[i]);
                         return;
                     }
-                    else {
-                        console.log('This vehicle does not have any towing capacity.');
-                    }
                 }
             }
             // TODO: add statements to perform the wheelie action only if the selected vehicle is a motorbike
@@ -374,7 +372,7 @@ class Cli {
                     if (vehicle instanceof Motorbike && vehicle.vin === this.selectedVehicleVin) {
                         vehicle.wheelie();
                     }
-                    else {
+                    else if (vehicle.vin === this.selectedVehicleVin) {
                         console.log('This is not a motorbike!');
                     }
                 }

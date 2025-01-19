@@ -262,7 +262,7 @@ class Cli {
           parseInt(answers.year),
           parseInt(answers.weight),
           parseInt(answers.topSpeed),
-          [],
+          [new Wheel(answers.frontWheelDiameter, answers.frontWheelBrand), new Wheel(answers.rearWheelDiameter, answers.rearWheelBrand)],
         );
         // TODO: push the motorbike to the vehicles array
         this.vehicles.push(motorbike);
@@ -397,9 +397,7 @@ class Cli {
             if (trucks[i].vin === this.selectedVehicleVin) {
               this.findVehicleToTow(trucks[i]);
               return;
-            } else {
-              console.log('This vehicle does not have any towing capacity.');
-            }
+            } 
           }
         }
         // TODO: add statements to perform the wheelie action only if the selected vehicle is a motorbike
@@ -407,7 +405,7 @@ class Cli {
           for(const vehicle of this.vehicles){
             if(vehicle instanceof Motorbike && vehicle.vin === this.selectedVehicleVin){
               vehicle.wheelie()
-            } else {
+            } else if(vehicle.vin === this.selectedVehicleVin) {
               console.log('This is not a motorbike!');
             }
           }
