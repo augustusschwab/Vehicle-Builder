@@ -38,4 +38,4 @@ This application runs in the command line with `Node.js` and the `inquirer` pack
   
   
 > [!NOTE]
-  >All code was written by Gus Schwab using the starter code provided in Module 07 of the U of U Software Development Bootcamp.
+  >All code was written by Gus Schwab using the starter code provided in Module 08 of the U of U Software Development Bootcamp.
