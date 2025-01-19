@@ -17,13 +17,13 @@ To install, clone or download the project folder and run `npm install` from the 
 ## Usage
 This application runs in the command line with `Node.js` and the `inquirer` package. Once a root folder is setup on the users machine and the dependencies are installed the application can be run using `npm start` from the command line. See video below for an example.
 
-  [Vehicl Builder Example Video](https://drive.google.com/file/d/14OLEVOpA1lXHwWyewXQMNC_mNpi_--YG/view?usp=sharing)
+  [Vehicle Builder Example Video](https://drive.google.com/file/d/14OLEVOpA1lXHwWyewXQMNC_mNpi_--YG/view?usp=sharing)
 
 
 ## License
-  ![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
+  ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-[GPL 3.0 License](https://www.gnu.org/licenses/gpl-3.0)
+[MIT License](https://opensource.org/licenses/MIT)
   
 ## Contributing
   To contribute to this repository, please contact the repository owner via the email in the questions section.
